@@ -1,19 +1,65 @@
-# XCR Template --- Svelte
-Compose an event driven UI powered by a finite state machine with support for URLs.
 
-*Huge thanks to [XState](https://xstate.js.org/docs/) and [xstate-component-tree](https://github.com/tivac/xstate-component-tree) for making this project possible.*
+![header](header.png)
 
-[Documentation](https://github.com/qudo-lucas/xcr/tree/master/packages/xcr-core)
+# State Machine Snacks 🍕
+## Simple UI
+Example of a simple UI utilizing [State Machine Snacks](https://github.com/qudo-lucas/state-machine-snacks) and [Plugin Components](https://github.com/qudo-lucas/sms-plugin---components)
 
-Custom autofix settings located in `./vscode/settings.json`. While this is a good solution for most cases, feel free to remove the following lines if they conflict with existing extensions like Prettier. 
+**Dev**
+Start the dev server. 
+`npm run dev`
+
+**Build**
+Build project.
+`npm run build`
+
+**Serve**
+Serve a static copy of the build.
+`npm run serve`
+
+```javascript
+import sms from "state-machine-snacks";
+import components from "sms-plugin---components";
+import config from "./machine/machine.config.js";
+
+// Create your service with 🍕.
+const service = sms({
+    config,
+
+    plugins : [
+        components(),
+    ],
+});
+
+service.start();
+
+export default service;
 ```
-"editor.codeActionsOnSave": {
-    "source.fixAll.stylelint": true,
-    "source.fixAll.eslint": true,
-},
-```
+```javascript
+import { component } from "sms-plugin---components";
 
-## Development
-**Install**: `npm install`
-**Start Dev Server**: `npm run dev`
-**Build**: `npm run build`# sms-template---simple-ui
+import ViewOne from "shared/components/views/one.svelte";
+import ViewTwo from "shared/components/views/two.svelte";
+
+export default {
+    initial : "resting",
+    
+    on : {
+        GO_ONE : ".one",
+        RESET  : ".resting",
+    },
+
+    states : {
+        resting : {},
+        one     : component(ViewOne, {
+            on : {
+                GO_TWO : ".two",
+            },
+
+            states : {
+                two : component(ViewTwo),
+            },
+        }),
+    },
+};
+```
