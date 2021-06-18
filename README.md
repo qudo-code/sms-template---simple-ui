@@ -1,8 +1,7 @@
 
+[⬅ Back to 🍕](https://github.com/qudo-lucas/state-machine-ui)
 ![header](header.png)
-
-# State Machine Snacks 🍕
-## Simple UI
+# 🍕 Simple UI
 Example of a simple UI utilizing [State Machine Snacks](https://github.com/qudo-lucas/state-machine-snacks) and [Plugin Components](https://github.com/qudo-lucas/sms-plugin---components)
 
 **Dev**
