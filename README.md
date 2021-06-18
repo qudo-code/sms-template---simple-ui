@@ -1,20 +1,17 @@
 
 [⬅ Back to 🍕](https://github.com/qudo-lucas/state-machine-ui)
+
 ![header](header.png)
+
 # 🍕 Simple UI
-Example of a simple UI utilizing [State Machine Snacks](https://github.com/qudo-lucas/state-machine-snacks) and [Plugin Components](https://github.com/qudo-lucas/sms-plugin---components)
+Example of a simple UI utilizing [State Machine Snacks](https://github.com/qudo-lucas/state-machine-snacks) and [Plugin Components](https://github.com/qudo-lucas/sms-plugin---components).
 
-**Dev**
-Start the dev server. 
-`npm run dev`
+| Script | Description |
+| ---    | ---         |
+| `npm run dev` | Start the dev server. |
+| `npm run build` | Build project. |
+| `npm run serve` | Serve a static copy of the build.|
 
-**Build**
-Build project.
-`npm run build`
-
-**Serve**
-Serve a static copy of the build.
-`npm run serve`
 
 ```javascript
 import sms from "state-machine-snacks";
